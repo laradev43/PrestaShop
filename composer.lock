@@ -5100,16 +5100,16 @@
         },
         {
             "name": "prestashop/contactform",
-            "version": "v4.4.2",
+            "version": "v4.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PrestaShop/contactform.git",
-                "reference": "98886a82afc2953cb166081e9eaf2872fc457d4d"
+                "reference": "95346c18ca65f859efdd749e596779cdca459b10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PrestaShop/contactform/zipball/98886a82afc2953cb166081e9eaf2872fc457d4d",
-                "reference": "98886a82afc2953cb166081e9eaf2872fc457d4d",
+                "url": "https://api.github.com/repos/PrestaShop/contactform/zipball/95346c18ca65f859efdd749e596779cdca459b10",
+                "reference": "95346c18ca65f859efdd749e596779cdca459b10",
                 "shasum": ""
             },
             "require": {
@@ -5139,9 +5139,9 @@
             "description": "PrestaShop module contactform",
             "homepage": "https://github.com/PrestaShop/contactform",
             "support": {
-                "source": "https://github.com/PrestaShop/contactform/tree/v4.4.2"
+                "source": "https://github.com/PrestaShop/contactform/tree/v4.4.3"
             },
-            "time": "2024-01-12T10:15:52+00:00"
+            "time": "2024-11-28T14:37:15+00:00"
         },
         {
             "name": "prestashop/dashactivity",
@@ -6727,16 +6727,16 @@
         },
         {
             "name": "prestashop/ps_linklist",
-            "version": "v7.0.0",
+            "version": "v7.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PrestaShop/ps_linklist.git",
-                "reference": "d75fb386d1ee204fb0f5bf1fcbe64afd45cbbbdf"
+                "reference": "d68106a05a27d48ed64f178e093aca75f5cf9318"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PrestaShop/ps_linklist/zipball/d75fb386d1ee204fb0f5bf1fcbe64afd45cbbbdf",
-                "reference": "d75fb386d1ee204fb0f5bf1fcbe64afd45cbbbdf",
+                "url": "https://api.github.com/repos/PrestaShop/ps_linklist/zipball/d68106a05a27d48ed64f178e093aca75f5cf9318",
+                "reference": "d68106a05a27d48ed64f178e093aca75f5cf9318",
                 "shasum": ""
             },
             "require": {
@@ -6769,9 +6769,9 @@
             "description": "PrestaShop - Link list",
             "homepage": "https://github.com/PrestaShop/ps_linklist",
             "support": {
-                "source": "https://github.com/PrestaShop/ps_linklist/tree/v7.0.0"
+                "source": "https://github.com/PrestaShop/ps_linklist/tree/v7.0.1"
             },
-            "time": "2024-09-09T14:00:31+00:00"
+            "time": "2024-11-29T15:31:17+00:00"
         },
         {
             "name": "prestashop/ps_mainmenu",
