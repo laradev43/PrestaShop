@@ -1207,16 +1207,46 @@ class OrderCore extends ObjectModel
      */
     public function isReturnable()
     {
-        // Check if order has been paid or shipped
-        $isPaidOrShipped = $this->hasBeenPaid() || $this->hasBeenShipped();
-
         // Check if order returns are enabled in configuration
-        // Returnable if both conditions are met
-        if (Configuration::get('PS_ORDER_RETURN', null, null, $this->id_shop) && $isPaidOrShipped) {
+        if (!$this->areReturnsEnabled()) {
+            return false;
+        }
+
+        // Check if order meets the return conditions
+        if ($this->meetsReturnConditions()) {
             return $this->getNumberOfDays();
         }
 
         return false;
+    }
+
+    /**
+     * Check if order returns are enabled in configuration.
+     *
+     * @return bool
+     */
+    private function areReturnsEnabled()
+    {
+        return Configuration::get('PS_ORDER_RETURN', null, null, $this->id_shop);
+    }
+
+    /**
+     * Check if the order meets the configured return conditions.
+     *
+     * @return bool
+     */
+    private function meetsReturnConditions()
+    {
+        $returnCondition = Configuration::get('PS_ORDER_RETURN_CONDITION', null, null, $this->id_shop);
+
+        switch ($returnCondition) {
+            case 2: // Order needs to be paid
+                return $this->hasBeenPaid();
+            case 3: // Order needs to be shipped
+                return $this->hasBeenShipped();
+            default: // Default to paid or shipped
+                return $this->hasBeenPaid() || $this->hasBeenShipped();
+        }
     }
 
     public static function getLastInvoiceNumber()

@@ -41,6 +41,7 @@ class MerchandiseReturnOptionsConfigurationTest extends AbstractConfigurationTes
 
     private const VALID_CONFIGURATION = [
         MerchandiseReturnOptionsType::FIELD_ENABLE_ORDER_RETURN => true,
+        MerchandiseReturnOptionsType::FIELD_ORDER_RETURN_CONDITION => 1,
         MerchandiseReturnOptionsType::FIELD_ORDER_RETURN_PERIOD_IN_DAYS => 123,
         MerchandiseReturnOptionsType::FIELD_ORDER_RETURN_PREFIX => ['#RE'],
     ];
@@ -71,6 +72,12 @@ class MerchandiseReturnOptionsConfigurationTest extends AbstractConfigurationTes
                         null,
                         $shopConstraint,
                         self::VALID_CONFIGURATION[MerchandiseReturnOptionsType::FIELD_ENABLE_ORDER_RETURN],
+                    ],
+                    [
+                        'PS_ORDER_RETURN_CONDITION',
+                        null,
+                        $shopConstraint,
+                        self::VALID_CONFIGURATION[MerchandiseReturnOptionsType::FIELD_ORDER_RETURN_CONDITION],
                     ],
                     [
                         'PS_ORDER_RETURN_NB_DAYS',

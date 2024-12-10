@@ -36,6 +36,7 @@ class MerchandiseReturnOptionsConfiguration extends AbstractMultistoreConfigurat
 {
     private const CONFIGURATION_FIELDS = [
         'enable_order_return',
+        'order_return_condition',
         'order_return_period_in_days',
         'order_return_prefix',
     ];
@@ -49,6 +50,7 @@ class MerchandiseReturnOptionsConfiguration extends AbstractMultistoreConfigurat
 
         return [
             'enable_order_return' => (bool) $this->configuration->get('PS_ORDER_RETURN', null, $shopConstraint),
+            'order_return_condition' => (int) $this->configuration->get('PS_ORDER_RETURN_CONDITION', null, $shopConstraint),
             'order_return_period_in_days' => (int) $this->configuration->get('PS_ORDER_RETURN_NB_DAYS', null, $shopConstraint),
             'order_return_prefix' => $this->configuration->get('PS_RETURN_PREFIX', null, $shopConstraint),
         ];
@@ -76,6 +78,12 @@ class MerchandiseReturnOptionsConfiguration extends AbstractMultistoreConfigurat
             $shopConstraint
         );
         $this->updateConfigurationValue(
+            'PS_ORDER_RETURN_CONDITION',
+            'order_return_condition',
+            $configuration,
+            $shopConstraint
+        );
+        $this->updateConfigurationValue(
             'PS_ORDER_RETURN_NB_DAYS',
             'order_return_period_in_days',
             $configuration,
@@ -99,6 +107,7 @@ class MerchandiseReturnOptionsConfiguration extends AbstractMultistoreConfigurat
         return (new OptionsResolver())
             ->setDefined(self::CONFIGURATION_FIELDS)
             ->setAllowedTypes('enable_order_return', 'bool')
+            ->setAllowedTypes('order_return_condition', 'int')
             ->setAllowedTypes('order_return_period_in_days', 'int')
             ->setAllowedTypes('order_return_prefix', 'array');
     }
